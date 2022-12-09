@@ -19,14 +19,19 @@ body{
 }
 h1{
     font-family: 'Montserrat', sans-serif ;
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1.5;
     font-weight: 900;
+   }
+   h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
    }
    /* navigation bar */
 
    .navbar{
-    padding-bottom: 4.5rem;
+    padding-bottom: 0 0 4.5rem;
 
    }
 
@@ -34,5 +39,83 @@ h1{
     font-family: 'Ubuntu', sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
+
+   }
+   .nav-item{
+    padding: 0 18px;
+   }
+   .nav-link{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: lighter;
+   }
+
+   /* donwload buttons */
+
+   .download-button{
+    margin: 5% 3% 5% 0;
+   }
+
+   /* title image */
+   .title-image{
+    width: 60%;
+    transform: rotate(25deg);
+   }
+
+   /* segundasecçao */
+   
+   #features{
+    margin: 5% 15% 5% 15%;
+   }
+
+   #features i {
+    color: #ef8172;
+    display: block;
+    padding: 3%;
+    margin: 8%;
+   }
+   #features i:hover {
+    color: #ff4c68;
+   }
+   #features h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.5rem;
     
+   }
+   #features p{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #8f818f;
+   }
+
+
+   /* testimonial section */
+   #testimonials{
+    
+    text-align: center;
+    background-color: #ff4c68;
+    color: white;    
+   }
+   .testimonail-image{
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+   }
+
+   #press{
+    background-color: #ff4c68;
+    text-align: center;
+    padding-bottom: 3%;
+   }
+   .press-logo{
+    width: 15%;
+    margin: 20px 20px 50px;
+
+   }
+   
+   .carousel-item{
+    padding: 7% 15%;
+
    }
