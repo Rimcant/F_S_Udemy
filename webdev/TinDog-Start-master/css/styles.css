@@ -8,6 +8,7 @@ font-family: 'Ubuntu', sans-serif;
 
 body{
     font-family: 'Montserrat', sans-serif ;
+    
 }
 #title{
     background-color: #ff4c68;
@@ -28,6 +29,15 @@ h1{
     font-size: 3rem;
     line-height: 1.5;
    }
+
+   h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.5rem; }
+    p{
+        color:#8f8f8f;
+    }
    /* navigation bar */
 
    .navbar{
@@ -43,7 +53,7 @@ h1{
    }
    .nav-item{
     padding: 0 18px;
-   }
+   }  
    .nav-link{
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
@@ -60,16 +70,27 @@ h1{
    .title-image{
     width: 60%;
     transform: rotate(25deg);
+    position: absolute;
+    z-index: 0;
+       
    }
+   .fotodocao{
+    position: relative;
+   }
+ 
 
    /* segundasecçao */
    
    #features{
-    margin: 5% 15% 5% 15%;
+    padding: 7% 15%;
+    background-color: white;
+    position: relative;
+    z-index: 3;
+    
    }
-
-   #features i {
-    color: #ef8172;
+   
+   #features i {  
+    color: #ef8171;
     display: block;
     padding: 3%;
     margin: 8%;
@@ -118,4 +139,15 @@ h1{
    .carousel-item{
     padding: 7% 15%;
 
+   }
+
+
+   /* pricing */
+
+   #pricing{
+    padding: 100px;
+    text-align: center;
+   }
+   .pricing-collum{
+    padding: 3% 2%;
    }
