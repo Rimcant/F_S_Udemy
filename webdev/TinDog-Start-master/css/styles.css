@@ -16,7 +16,7 @@ body{
 
 }
 .container-fluid{
-    padding: 3% 15%;
+    padding: 3% 15% 7%;
 }
 h1{
     font-family: 'Montserrat', sans-serif ;
@@ -71,12 +71,13 @@ h1{
     width: 60%;
     transform: rotate(25deg);
     position: absolute;
-    z-index: 0;
-       
+    right: 30%;
+          
    }
    .fotodocao{
     position: relative;
    }
+
  
 
    /* segundasecçao */
@@ -85,7 +86,7 @@ h1{
     padding: 7% 15%;
     background-color: white;
     position: relative;
-    z-index: 3;
+    
     
    }
    
@@ -151,3 +152,29 @@ h1{
    .pricing-collum{
     padding: 3% 2%;
    }
+   @media (max-width: 1028px){
+    .title-image {
+        position: static;
+        transform: rotate(0);
+    }
+    #title{
+        text-align: center;
+    }
+  }
+  #cta{
+    background-color: #ff4c68;
+    color: white;
+    text-align: center;
+    padding: 3% 15% 7%;
+  }
+  #footer{
+    background-color: #fff;
+    color: white;
+    text-align: center;
+    padding: 5% 15% 5%;
+
+  }
+  #footer i {
+    color: black;
+    margin: 20px 10px;
+  } 
