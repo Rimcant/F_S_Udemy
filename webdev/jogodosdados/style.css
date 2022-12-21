@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+:root{
+    --cor0: #35353F;
+    --cor1: #45C398;
+    --cor2: #232931;
+    --cor3: #4ECCA3;
+   
+
+    --fonte-0: 'Lobster Two', cursive;
+    --font-1: 'Lobster', cursive; 
+    --fonte-2: 'Indie Flower', cursive;
+
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: var(--cor2);
+    color: var(--cor3);
+    text-align: center;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .dice {
+    text-align: center;
+    display: inline-block;
+    
+  
+  }
+  
+
+h1{
+    margin: 30px;
+    font-family:var(--font-1);
+    text-shadow: 5px 0 #232931;
+    font-size: 8rem;
+}
+div p {
+
+    font-size: 2rem;
+    color: #4ECCA3;
+    font-family: 'Indie Flower', cursive;
+
+}
+div{
+    display: inline-block;
+}
+img {
+    width: 80%;}
+
+footer{
+    margin-top: 5%;
+    color: #EEEEEE;
+    font-family: 'Indie Flower', cursive;
+    color: aliceblue;
+    text-align: center;
+}
