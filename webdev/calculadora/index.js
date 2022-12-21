@@ -10,7 +10,7 @@
 
 
 // /*var n = document.querySelectorAll(".drum").length;
-//  console.log(n)   
+//  console.log(n)
  
 // for (var i = 0; i <= n; i++) {
 //     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
@@ -41,9 +41,12 @@
 // //for (var i=0 n<7)
 // //document.querySelectorAll(`.${n}`)[0]
 
+var numeros = document.querySelectorAll(".drum");
+console.log(numeros);
+var numarray = []
 
-for (var i = 0; i <= 9; i++) {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-        alert(`${i}`)
-    });
+for (var i = 0; i <= 14; i++) {
+    console.log(numeros[i].textContent);
+    numarray.push(numeros[i].textContent)
 }
+console.log(numarray)
