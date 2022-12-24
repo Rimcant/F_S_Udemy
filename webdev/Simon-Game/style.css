@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+:root{
+    --cor0: #011F3F;
+    --cor1: #FEF2BF;
+
+   
+
+    --fonte-0: 'Press Start 2P', cursive;
+
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    text-align: center;
+    background-color: var(--cor0);
+    font-family: var(--fonte-0);
+}
+
+h1{
+    color: var(--cor1);
+    font-size: 3rem;
+    margin: 5%;
+}
+
+.contentor{
+    height: 200px;
+    width: 200px;
+    border-radius: 40px;
+    border: 10px solid black;
+    display: inline-block;
+    margin: 2%;
+}
+#green  {
+    background-color: green;
+}
+#red {
+    background-color: red;
+}
+#yellow{
+    background-color: yellow;
+}
+#blue {
+    background-color: blue;
+}
+
+
+

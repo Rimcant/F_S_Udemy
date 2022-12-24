@@ -1,52 +1,57 @@
 
+// #####################PROGRAMA CALCULADORA ######################
 
- 
-// // document.querySelector("button").addEventListener("click", handleclick);
-
-// // function handleclick() {
-// //     alert("i got clicked!")
-// // };
-
-
-
-// /*var n = document.querySelectorAll(".drum").length;
-//  console.log(n)
- 
-// for (var i = 0; i <= n; i++) {
-//     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-//         alert("i got clicked!")
-//     });
-// }
-// */
-
-// // var n = 9
-
-// // /for (var i = 0; i <= n; i++) {
-    
-// //     var numero = ".num" + i
-// //     var numero1= String(numero)
-// //     console.log (numero1)
- 
-// //     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-// //         alert(`${i} + ${numero} + ${numero1} `)
-// //     });
-// // }
-
-// //document.querySelector(`.${n}`).addEventListener("click", handleclick);
-
-//  //function handleclick() {
-// //     alert(`${}`)
-// // };
-
-// //for (var i=0 n<7)
-// //document.querySelectorAll(`.${n}`)[0]
-
-var numeros = document.querySelectorAll(".drum");
-console.log(numeros);
-var numarray = []
-
+//Só com click, selecionar o valor do ecrã com event listener
 for (var i = 0; i <= 14; i++) {
-    console.log(numeros[i].textContent);
-    numarray.push(numeros[i].textContent)
+    document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+
+    
+
+
+
+        //tenho de gravar 2 variaveis diferentes uma antes do operador e outra depois do operador
+        //mas a variavel antes do operador pode ter um + ou -
+        //selecionares *ou/ ou = o resultado tem de dizer erro
+        
+
+        var antesDoOperador
+        var depoisDoOperador
+
+        
+        
+
+        
+        var numeroSelecionado = this.innerHTML
+        document.querySelector(".resultado").innerHTML += numeroSelecionado; //coloca no visor o 
+
+
+
+
+        if (numeroSelecionado === "=")
+            console.log("igual")
+        if (numeroSelecionado === "+")
+           console.log(conta(1,7,soma))
+        if (numeroSelecionado === "=")
+            console.log("igual")  
+        
+        
+    });
 }
-console.log(numarray)
+
+function soma(n,m) {
+return n+m
+    
+}
+
+function conta(n, m, soma) {
+    return soma(n,m)
+    
+}
+
+console.log ()
+
+
+
+
+
+
