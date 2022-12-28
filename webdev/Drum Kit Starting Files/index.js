@@ -18,6 +18,7 @@
 
 document.addEventListener("keydown", function (event) {
     var key = event.key
+    
     makeSound(key)
 });
 

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 :root{
     --cor0: #011F3F;
     --cor1: #FEF2BF;
@@ -27,26 +28,62 @@ h1{
     margin: 5%;
 }
 
-.contentor{
+.btn{
     height: 200px;
     width: 200px;
     border-radius: 40px;
-    border: 10px solid black;
+    border: 10px solid rgba(0, 0, 0, 0.852);
     display: inline-block;
     margin: 2%;
 }
-#green  {
+.green  {
     background-color: green;
 }
-#red {
+.green:active  {
+    background-color: rgb(5, 248, 5);
+}
+.green_active  {
+    background-color: rgb(5, 248, 5);
+}
+.red {
+    background-color: rgba(206, 2, 2, 0.975);
+}
+.red:active {
     background-color: red;
 }
-#yellow{
-    background-color: yellow;
+.red_active {
+    background-color: red;
 }
-#blue {
+.yellow{
+    background-color: rgba(255, 221, 0, 0.822);
+}
+.yellow:active{
+    background-color: rgb(255, 225, 0);
+}
+.yellow_active{
+    background-color: rgb(255, 225, 0);
+}
+.blue {
+    background-color: rgba(0, 0, 180, 0.813);
+}
+.blue:active {
+    background-color: blue;
+}
+.blue_active {
     background-color: blue;
 }
 
+.btnglow:active {
+    color: #fff;
+    border-color: #dfdfdf;
+    box-shadow: 2px 2px 40px 2px white;
+    border: 10px solid rgba(0, 0, 0, 0.204);  
 
+}
+.btnglow_active {
+    color: #fff;
+    border-color: #dfdfdf;
+    box-shadow: 2px 2px 40px 2px white;
+    border: 10px solid rgba(0, 0, 0, 0.204);
+}
 
