@@ -13,7 +13,7 @@ $(".contentor").click(function (event) {
 
 
     somdobotao(cor)
-    checkAnswer(cor);
+    checkAnswer();
      
  }) //da-te output de qual cor carregaste? ouputs sao red green blue yellow
 
@@ -31,6 +31,8 @@ function somdobotao(cor) {
 
 $(document).keydown(function () {
     console.log("começa jogo")
+    userClickedPattern = [];
+    gamePattern = []
     if (!start) {
         
         sequenciadeniveis()
@@ -58,50 +60,39 @@ function sequenciadeniveis() {
     console.log("iniciou sequencia de niveis")
     userClickedPattern = [] 
     level++
+    console.log("userClickedPattern devia dar vazio"+ userClickedPattern)
     console.log(userClickedPattern)
     
     $("h1").text("Level " + level)
+
     gamePattern.push(tocaSomAleatorio())
-
+    console.log("gamePattern devia receber uma cor para alem da cor existente" + gamePattern)
     console.log(gamePattern)
-    console.log("coraleatoria.target")
     
-    
-
     //produzir uma sequencia e meter essa sequencia num array
-      
-        
-       
-   
-        
-    
-    console.log("esta sequencia dada pela maquina " + gamePattern)
-    console.log(gamePattern)
+
 
 }
 
-function checkAnswer(variavel) {
+function checkAnswer() {
     console.log("verificar resposta")
-    console.log("variavel.length - 1")
-    console.log(variavel.length - 1)
-    console.log("variavel")
-    console.log(variavel)
     console.log("gamePattern")
     console.log(gamePattern)
+    console.log(gamePattern.toString())
     console.log("gamePattern.length")
     console.log(gamePattern.length)
     console.log("userClickedPattern")
     console.log(userClickedPattern)
-    console.log(gamePattern.length)
     console.log("userClickedPattern.length")
     console.log(userClickedPattern.length)
     if (gamePattern.length == userClickedPattern.length) {
 
         console.log("gamePattern.length == userClickedPattern.length")
 
-        if (gamePattern = userClickedPattern) {
+        if (gamePattern.toString() == userClickedPattern.toString()) {
+            
 
-            console.log("gamepattern=variavel")
+            console.log("gamepattern=userClickedPattern")
         
             sequenciadeniveis()
             
@@ -113,9 +104,13 @@ function checkAnswer(variavel) {
             $("h1").text("Game Over, Press Any Key to Restart");
             start = false
             level = 0
+            userClickedPattern = [];
+            gamePattern = [] 
+
         }
 
     }
+    console.log("fim do if awnser")
     
     
     
