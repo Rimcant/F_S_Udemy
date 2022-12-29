@@ -1,43 +1,44 @@
 
-    function qualcor(qcor) {
-        var qqcor = qcor
-        return qqcor 
-        
-    }
-//colocar som nos botoes
+
+var userClickedPattern = [];
+var gamePattern = [] 
+var start = false;
+var level = 0;
+
 
 $(".contentor").click(function (event) { 
     
-    var cor = event.target.id
+     var cor = event.target.id
+     userClickedPattern.push(cor);
 
 
     somdobotao(cor)
-    qualcor(cor)
-    
-}) //da-te output de qual cor carregaste? ouputs sao red green blue yellow
+    checkAnswer(cor);
+     
+ }) //da-te output de qual cor carregaste? ouputs sao red green blue yellow
 
 
-
+//colocar som nos botoes
 function somdobotao(cor) {
     var SomBotao = new Audio(`./sounds/${cor}.mp3`);
     SomBotao.play();
+    var qcor = cor
     
 } // toca o som da cor que carregaste
     
 
-//pressionar qq tecla para mudar titulo para nivel 1
+//pressionar qq tecla para iniciar o jogo 
 
-
-$(document).keydown(function (event) {
-    var jogocomeça = event.key
-    console.log(jogo)
-    if (jogocomeça != "") {
-        console.log("começa jogo")
-        jogo()        
+$(document).keydown(function () {
+    console.log("começa jogo")
+    if (!start) {
+        
+        sequenciadeniveis()
+        start = true
     }
 })
 
-
+// esta funçao toca um som aleatorio e faz piscar o sitio do som 
 function tocaSomAleatorio() {
     var cores = [green, red, yellow, blue]    
     var sequenciaDeCores = []
@@ -50,43 +51,74 @@ function tocaSomAleatorio() {
         $("#" + corRandom.id).removeClass('btnglow_active');
     }, 400);
      
-    return sequenciaDeCores
+    return corRandom.id
 }
 
-function jogo() {
+function sequenciadeniveis() {
+    console.log("iniciou sequencia de niveis")
+    userClickedPattern = [] 
+    level++
+    console.log(userClickedPattern)
+    
+    $("h1").text("Level " + level)
+    gamePattern.push(tocaSomAleatorio())
 
+    console.log(gamePattern)
+    console.log("coraleatoria.target")
+    
+    
 
-    for (let level = 1; level < 3; level++) {
-        $("h1").html("level " + level)
-        var a = tocaSomAleatorio()
-        console.log(a)
-        if (a = tocaSomAleatorio()) {
+    //produzir uma sequencia e meter essa sequencia num array
+      
+        
+       
+   
+        
+    
+    console.log("esta sequencia dada pela maquina " + gamePattern)
+    console.log(gamePattern)
 
-            console.log("continuar")
+}
+
+function checkAnswer(variavel) {
+    console.log("verificar resposta")
+    console.log("variavel.length - 1")
+    console.log(variavel.length - 1)
+    console.log("variavel")
+    console.log(variavel)
+    console.log("gamePattern")
+    console.log(gamePattern)
+    console.log("gamePattern.length")
+    console.log(gamePattern.length)
+    console.log("userClickedPattern")
+    console.log(userClickedPattern)
+    console.log(gamePattern.length)
+    console.log("userClickedPattern.length")
+    console.log(userClickedPattern.length)
+    if (gamePattern.length == userClickedPattern.length) {
+
+        console.log("gamePattern.length == userClickedPattern.length")
+
+        if (gamePattern = userClickedPattern) {
+
+            console.log("gamepattern=variavel")
+        
+            sequenciadeniveis()
+            
             
         } else {
-            console.log("nao foi igual")
-
-            console.log()
+            console.log("gamepattern = NOT EQUAL = variavel")
+            somdobotao("wrong");
+        
+            $("h1").text("Game Over, Press Any Key to Restart");
+            start = false
+            level = 0
         }
 
-
-        console.log()
-        
-        
-        // var sequencia = []
-        // sequencia = tocaSomAleatorio()
-        
-        
-        
-        //const element = array[index];
-        
     }
-    console.log(somdobotao())
     
     
     
-
 }
     
 
