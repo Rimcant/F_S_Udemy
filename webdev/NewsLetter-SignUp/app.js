@@ -1,24 +1,56 @@
 const express = require("express");
 const bodyParser = require("body-parser")
 const app = express()
+const https = require("https")
 app.use(bodyParser.urlencoded({ extendend: true }));
 
-app.use(express.static("Public"))
+app.use(express.static("Public")) // para isto é preciso o express, ficheiro estático
 
-app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/signup.html"); 
+
+app.get("/", function (req, res) { //app running using the server (qnd fazes o requeest do ao nosso server ele tem de dar esta resposta)
+    res.sendFile(__dirname + "/signup.html"); //a nossa resposta é enviar este ficheiro
 })
 
 //para obter dados dos forms
 
-app.post("/", function (req, res) {
-    var firstName = req.body.fname
-    var lastName = req.body.sname
-    var email = req.body.email
+app.post("/", function (req, res) {// post route, input do user (para isto é preciso o bodyparser url encoded)
+    const firstName = req.body.fName
+    const lastName = req.body.sName
+    const email = req.body.email
+    /*
+###################__DATA OBJECT____############################*/
+        
+    const data = { //data object 
+        members: [
+            {
+                email_address: email,
+                status: "subscribed",
+                merge_fields: {
+                    FNAME: firstName,
+                    LNAME: lastName
+                }
+            }
+        ]
+    }
+//#################################################################
+    var jsonData = JSON.stringify(data) //tornar data em flatpack json
 
-    console.log(firstName, lastName, email)
+    const url = "https://us10.api.mailchimp.com/3.0/lists/b8d59a430f"
 
-})
+    const options = {
+        method: "POST",
+        auth: "angela1:5fac3d18836e00f33d85daafc471a984-us10"
+    } 
+
+    const request = https.request(url, options, function (response) {
+        response.on("data", function (data) {
+            console.log(JSON.parse(data));
+        })
+    })
+    
+    request.write(jsonData)
+    request.end();
+}); 
 
 
 
@@ -36,36 +68,6 @@ app.listen(3000, function () {
 
 
 //key : 5fac3d18836e00f33d85daafc471a984-us10
+//      5fac3d18836e00f33d85daafc471a984-us10
 
 //list id: b8d59a430f
-
-
-// const client = require("@mailchimp/mailchimp_marketing");
-
-// client.setConfig({
-//   apiKey: "YOUR_API_KEY",
-//   server: "YOUR_SERVER_PREFIX",
-// });
-
-// const run = async () => {
-//   const response = await client.lists.createList({
-//     name: "name",
-//     permission_reminder: "permission_reminder",
-//     email_type_option: true,
-//     contact: {
-//       com pany: "company",
-//       address1: "address1",
-//       city: "city",
-//       country: "country",
-//     },
-//     campaign_defaults: {
-//       from_name: "from_name",
-//       from_email: "Beulah_Ryan@hotmail.com",
-//       subject: "subject",
-//       language: "language",
-//     },
-//   });
-//   console.log(response);
-// };
-
-// run();
