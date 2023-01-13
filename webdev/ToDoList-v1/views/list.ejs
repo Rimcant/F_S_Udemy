@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+
+
+    <h1><%= kindOfDay%> </h1>
+
+    <!-- <% if(kindOfDay ==="Sábado" || kindOfDay === "Domingo") { %>
+        <h1 style="color: purple"> Lista de <%= kindOfDay %> </h1>
+    <%} else { %>
+        <h1 style="color: blue"> Lista de <%= kindOfDay %> </h1>
+        <% } %> -->
+
+<ul id = "tarefas">
+    <li> buy food </li>
+    <li> Fazer coisas </li>
+    <li> E outras coisas </li>
+    <li> E fazer coisas e mais coisas</li>
+    <li>  novoitem  </li>
+    <% for (var i = 0; i < novoitem.length; i++) { %>
+        <li > <%= novoitem[i] %> </li>
+        <% } %>
+
+
+
+
+</ul>
+
+<form action="/" method="post">
+    <label for="itext">Insere uma Tarefa!</label>
+    <p>       
+        <input type="text" name="text" id="itext">
+        <button type="submit">Submeter Tarefa</button>
+    </p>
+</form>
+    
+
+</body>
+</html>
