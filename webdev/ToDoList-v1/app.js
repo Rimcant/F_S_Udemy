@@ -2,11 +2,13 @@ const express = require("express")
 const bodyParser = require("body-parser")
 
 const app = express()
-var tarefas = []
+let tarefas = ["Fazer coisas", "outras coisas"]
+let workList = []
 
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.get("/", function (req, res) {
     var today = new Date();
@@ -20,55 +22,32 @@ app.get("/", function (req, res) {
         month: "long"
     }
    
-
     var dayi = today.toLocaleDateString("pt-pt", options)
 
     
     res.render("list", { kindOfDay: dayi, novoitem: tarefas });
 
-    app.post("/", function (req, res) {
-       
-        var tarefa = req.body.text
+    app.post("/", function (req, res) {        
+       console.log(req.body.list)
+       var tarefa = req.body.text
+       if (req.body.list === "Work List") {
+         workList.push(tarefa)
+         res.redirect("/work");        
+       } else {
         tarefas.push(tarefa)
-
-        //     var ul = document.getElementById("tarefas");
-        //     var li = document.createElement("li");
-        //     li.appendChild(document.createTextNode("tarefa"));
-        // ul.appendChild(li);
-
-        res.redirect("/");
-          
-        
-        
+        res.redirect("/");        
+       }  
 })
-    
+})
 
-
-
-
-    // if ( currentday === 6 || currentday === 0) {
-    //     day = "yay its the weekEnd!!"
-    // }
-    // else {
-    //     // res.write("<p>asdas</p>asda")
-    //     // res.write("<p>asdasd</p>sad")
-    //     // res.write("<h1>booo! I have to work :(</h1> ")
-    //     // res.send()
-    //     day = "BOOOOOO! Its WeekDAYY ... I have to work"
-        
-    // }
-  
-        
-   
+app.get("/work", function(req,res){
+    res.render("list", { kindOfDay: "Work List", novoitem: workList });
 })
 
 
-
-
-
-
-
-
+app.get("/footer", function(req,res){
+    res.render("footer")
+})
 
 app.listen(3000, function () {
     console.log("server started on port 3000");
