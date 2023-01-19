@@ -37,18 +37,6 @@ app.get("/compose", function (req, res) {
 
   res.render("compose");
 })
-app.post("/compose", function (req, res) {
- 
-  const post = {
-    title: req.body.postTitle,
-    content: req.body.postBody
-  };
-
-  posts.push(post)
- 
-  res.redirect("/");
-  
-})
 app.get("/posts/:postTitle", function (req, res) {
   const requestedTitled = _.lowerCase(req.params.postTitle);
   console.log(requestedTitled)
@@ -68,6 +56,19 @@ app.get("/posts/:postTitle", function (req, res) {
 
 
 });
+app.post("/compose", function (req, res) {
+ 
+  const post = {
+    title: req.body.postTitle,
+    content: req.body.postBody
+  };
+
+  posts.push(post)
+ 
+  res.redirect("/");
+  
+})
+
 
 
 
