@@ -20,25 +20,29 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 
 
 const fruit = new Fruit({
-    // name: "Apple",
+    name: "Apple",
     rating: 7,
     review: "pretty solid as a fruit."
 });
 
 
 
-fruit.save()
+// fruit.save()
 
 const personSchema = new mongoose.Schema({
     name: String,
-    age: Number
+    age: Number,
+    favouriteFruit: fruitSchema
 });
 const Person = mongoose.model("Person", personSchema);
 
 const person = new Person({
-    name: "John",
-    age: 37
+    name: "Amy",
+    age: 12,
+    favouriteFruit: fruit
 });
+
+
 
 
 // person.save();
@@ -93,6 +97,40 @@ Fruit.find(function (err, fruits) {
         
         });
     }
-    mongoose.connection.close();
+    
 });
 
+
+
+Fruit.findOne({name: "kiwi"}, function(err, fruit) {
+    if(err) {
+        console.log("Error finding Fruit. " + err );
+    }
+    else {
+        Person.updateOne({name: "John"}, {favouriteFruit: fruit }, function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                mongoose.connection.close();
+                console.log("Successfully updated document.");
+            }
+        });
+    }
+});
+
+
+// Person.updateOne({ _id: "63ce681438e1b648b2e64ea4" }, { $set: { name: "felizberto" } }, function (err, result) {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         console.log("Successfully updated person:", result);
+//     }
+// });
+
+// Person.deleteMany({ name: "John" }, function (err) {
+//     if (err) {
+//     console.log(err);
+//     } else {
+//     console.log("Successfully deleted all documents with the name John.");
+//     }
+//     });
