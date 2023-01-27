@@ -32,6 +32,12 @@ const item2 = new Item({
 
 const defaultItems = [item0, item1, item2]
 
+const listSchema = {
+  name: "string",
+  items: [itemSchema]
+}
+const List = mongoose.model("List", listSchema);
+
 app.get("/", function (req, res) {
   
   Item.find({}, function (err, results) {
@@ -54,21 +60,47 @@ app.get("/", function (req, res) {
   })
 });
 
+app.get("/:costumListName", function (req, res) {
+  const costumListName = req.params.costumListName;
+
+
+  List.findOne({ name: costumListName }, function(err, foundList) {
+    if (err) return handleError(err);
+    if (foundList)
+    //show Existing list
+      res.render("list", { listTitle: foundList.name, newListItems: foundList.items })
+    else
+    //create a new list
+      console.log("criar lista nova")
+      const list = new List({
+        name: costumListName,
+        items: defaultItems
+      });
+    list.save();
+    res.redirect("/" + costumListName)
+      
+  });
+
+})
+
 app.post("/", function (req, res) {
-
-  
-
   const itemName = req.body.newItem;
-
   itemnovo = new Item({
     name: itemName
   })
-
-  console.log(itemName)
-
-
-
-
+  itemnovo.save()
+  res.redirect("/")
+});
+app.post("/delete", function (req, res) {
+  const checkedItem = req.body.checkbox;
+  Item.findOneAndDelete({ _id: checkedItem }, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("item removed form the database.");
+      res.redirect("/")
+    }
+  })
 });
 
 app.get("/work", function(req,res){
