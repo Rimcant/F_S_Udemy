@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose")
 const date = require(__dirname + "/date.js");
+const _ = require("lodash");
 
 const app = express();
 
@@ -12,10 +13,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-ricardo:yhajvtCRmUXo1g5f@cluster0.8wyzybw.mongodb.net/todolistDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 const itemSchema = new mongoose.Schema({
-  name: { type: String, required: [true, "Nenhuma informçao inserida"] }
+  name: { type: "String" }
 });
 
 const Item = mongoose.model("Item", itemSchema);
@@ -61,46 +63,72 @@ app.get("/", function (req, res) {
 });
 
 app.get("/:costumListName", function (req, res) {
-  const costumListName = req.params.costumListName;
-
-
+  const costumListName = _.capitalize( req.params.costumListName);
+  
   List.findOne({ name: costumListName }, function(err, foundList) {
     if (err) return handleError(err);
-    if (foundList)
-    //show Existing list
-      res.render("list", { listTitle: foundList.name, newListItems: foundList.items })
-    else
-    //create a new list
-      console.log("criar lista nova")
+    if (foundList) {
+      //show Existing list
+      res.render("list", { listTitle: foundList.name, newListItems: foundList.items });
+    } else {
+      //create a new list
       const list = new List({
         name: costumListName,
         items: defaultItems
       });
-    list.save();
-    res.redirect("/" + costumListName)
-      
+      list.save();
+      res.redirect("/" + costumListName);
+    }
   });
-
-})
+});
 
 app.post("/", function (req, res) {
   const itemName = req.body.newItem;
+  const listName = req.body.list;
   itemnovo = new Item({
     name: itemName
   })
-  itemnovo.save()
-  res.redirect("/")
+
+  if (listName === "Today") {
+    itemnovo.save()
+    res.redirect("/")    
+  } else {
+    List.findOne({ name: listName }, function (err, foundList) {
+      foundList.items.push(itemnovo)
+      foundList.save()
+      res.redirect("/"+listName)      
+    })
+        
+  }
+
 });
+
 app.post("/delete", function (req, res) {
   const checkedItem = req.body.checkbox;
-  Item.findOneAndDelete({ _id: checkedItem }, function (err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("item removed form the database.");
-      res.redirect("/")
-    }
-  })
+  const listName = req.body.listName;
+
+  if (listName === "Today") {
+    Item.findOneAndDelete({ _id: checkedItem }, function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("item removed form the database.");
+        res.redirect("/")
+      }
+    });    
+  } else {
+    List.findOneAndUpdate({ name: listName }, { $pull: { items: { _id: checkedItem } } }, function (err, foundList) {
+      if (!err) {
+        res.redirect("/" + listName);
+      }
+      
+    })
+    
+  }
+
+
+
+  
 });
 
 app.get("/work", function(req,res){
@@ -111,6 +139,12 @@ app.get("/about", function(req, res){
   res.render("about");
 });
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
+
+app.listen(port, function() {
+  console.log("Server has started");
 });
