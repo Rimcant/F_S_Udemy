@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-ricardo:yhajvtCRmUXo1g5f@cluster0.8wyzybw.mongodb.net/todolistDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-ricardo:no1PrhnzHRTV2UZR@cluster0.8wyzybw.mongodb.net/todolistDB?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
 
 const itemSchema = new mongoose.Schema({
@@ -143,7 +143,7 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-app.listen(port);
+
 
 app.listen(port, function() {
   console.log("Server has started");
