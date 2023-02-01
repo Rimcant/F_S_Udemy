@@ -1,0 +1,336 @@
+[33mcommit af68dd39002b00959fd5731b95916d41fe9f95fb[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Feb 1 11:16:17 2023 +0000
+
+    Removed webdev folder
+
+[33mcommit c313b831bb666bb0005d68922c6eac27266311b1[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Feb 1 11:07:37 2023 +0000
+
+    Update .gitmodules
+
+[33mcommit 56a080ab3075e7560cc05654b8f10f462e33c40f[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Feb 1 11:05:19 2023 +0000
+
+    Adicionando submódulo webdev/024_todolist-v2
+
+[33mcommit 147acf6dc9170ac9aa7d830db5667a08d7f0ef7f[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Feb 1 10:55:14 2023 +0000
+
+    Adicionando submódulo webdev/018_NewsLetter-SignUp
+
+[33mcommit 1ced0810946e2cb8c7cb93c2389f42b89bdfd71a[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Feb 1 10:37:03 2023 +0000
+
+    Add submodule webdev/018_NewsLetter-SignUp
+
+[33mcommit 65245bcb6079652dac66265473c0d8e40be8606e[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 31 13:32:29 2023 +0000
+
+    Adding untracked files
+
+[33mcommit dd02b793b1da6612b31d970788d94b5d19e34880[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 31 13:17:19 2023 +0000
+
+    31-01-23
+
+[33mcommit 9c088f72d2353c266c7fa9ee8e302f9f59e230fc[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 31 10:49:18 2023 +0000
+
+    31-01-23
+
+[33mcommit 981ef0f66e4046ef1a278a433f65a81f13c2e12f[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 31 10:43:57 2023 +0000
+
+    31-01-23
+
+[33mcommit 671d0608a62895967d987f6bc91c86d29a07f652[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Jan 30 14:30:13 2023 +0000
+
+    30-01-2023
+
+[33mcommit b5c555b997a97c7bce73c3861c44be1275cf534b[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Jan 27 10:43:08 2023 +0000
+
+    27-01-2023
+
+[33mcommit ce63ec9725c18e28e84185c732a636484bdce48c[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Jan 26 13:53:06 2023 +0000
+
+    26-01-23
+
+[33mcommit 19a732025cf6f287381eee0656b83f3cd4ef3605[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Jan 25 18:54:51 2023 +0000
+
+    25-01-23
+
+[33mcommit 2be2c1cdf55e73b1cb4a4aa14c1b1b2506a20b18[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Jan 23 16:59:21 2023 +0000
+
+    23-01-23
+
+[33mcommit 28bb53e06abcac97114a282b5c5b0e9ad4ebabe9[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Jan 23 09:40:01 2023 +0000
+
+    23-01-2023
+
+[33mcommit 937f526e522fd4b8cd5175ba54081a1e4d5e474c[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Sat Jan 21 09:49:18 2023 +0000
+
+    21-01-23
+
+[33mcommit 019d87fe0438516a989961c53226eb97981c2274[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Jan 19 16:23:26 2023 +0000
+
+    19-01-23
+
+[33mcommit c11b6be7439b24e4b1224acc880271704fe8a3ac[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Jan 19 09:16:17 2023 +0000
+
+    19-01-16
+
+[33mcommit f155053223704caf806792fb608c8039f0596aac[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Jan 18 09:39:15 2023 +0000
+
+    18-01-23
+
+[33mcommit a7ac1d488425b263b89697cf825faaaba3bff173[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 17 10:11:50 2023 +0000
+
+    Update README.md
+
+[33mcommit 52bfbe95855fe9600e6cd0d70a4a30a0bc330b9e[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 17 09:43:12 2023 +0000
+
+    17-01-23
+
+[33mcommit 75284d2945b8b790b11fb3eefc5de9ee5cea80ed[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 17 09:22:48 2023 +0000
+
+    17-01-23
+
+[33mcommit 46269f0f1d89ba7e21ee45c7ebe173f1b2806ed3[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Jan 16 09:12:14 2023 +0000
+
+    16-01-2023
+
+[33mcommit 49bab9eaf02f0fbf1f16a6a464505e4b38b503d5[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Jan 13 09:39:43 2023 +0000
+
+    13-01-23
+
+[33mcommit de35bdaa5cd691d888b59de0a7b60aca198707df[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Jan 11 14:24:26 2023 +0000
+
+    11-01-23
+
+[33mcommit f92f3e8af6a693d31807f1a831d2f790bf22901b[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Jan 11 10:11:27 2023 +0000
+
+    11-11-23
+
+[33mcommit 957b7c43f640df3de1398481a98f41512c625815[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Jan 6 11:11:58 2023 +0000
+
+    06-01-23
+
+[33mcommit 62beef9e79585ccdc9698727c988e1add3c2aa66[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Jan 5 09:09:04 2023 +0000
+
+    05-01-2023
+
+[33mcommit c714fc0b0778c972b72d047ae2832d083b8a65d9[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Jan 4 09:39:19 2023 +0000
+
+    04-01-2023
+
+[33mcommit 8ebef187a5eee4df79d35c407c9f8bc57ef19acd[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Jan 3 08:56:08 2023 +0000
+
+    03-01-23
+
+[33mcommit 6ff0a03a2c1a5938050dd544decc351d437b22ca[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Dec 29 15:31:56 2022 +0000
+
+    29-12-22
+
+[33mcommit 4fbd32a73d02eec186dd50c0233e5abc33497a3b[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Dec 29 14:29:02 2022 +0000
+
+    29-12-22
+
+[33mcommit 89ebf1b79d5ce2273ed1b921fa274cd311b21bb7[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Dec 28 10:26:17 2022 +0000
+
+    28-12-22
+
+[33mcommit 9b29b697db8137ffde78e8100faf058006058274[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Dec 27 09:27:59 2022 +0000
+
+    27-12
+
+[33mcommit b269d8600c4445218fa4ea159e2db3135ad49b79[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Sat Dec 24 11:39:16 2022 +0000
+
+    24-12
+
+[33mcommit 04e265b3c4f13eeae1bd8fe05f00a5ebe470c8d0[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Dec 23 09:32:51 2022 +0000
+
+    23-12-22
+
+[33mcommit 5c679b6b25002193d05e0cec4150f276615e5f8d[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Dec 22 11:13:12 2022 +0000
+
+    22-12
+
+[33mcommit 911b702522c6fec856a993d91623f4e5dcd8c379[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Dec 21 18:46:26 2022 +0000
+
+    21-12-2022
+
+[33mcommit 100ee96b05b29253d9711a95c3d6b1100fb250df[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Dec 21 10:22:18 2022 +0000
+
+    21-12-22
+
+[33mcommit af0a26e51d41c6343f1373971ef79da18752a84c[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Dec 20 11:46:52 2022 +0000
+
+    20-12-22
+
+[33mcommit a40fdd705f9e56a72ad099f8032c49b0957a7c31[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Dec 12 09:34:51 2022 +0000
+
+    12-12
+
+[33mcommit 8440d92c6229627de36105545a513349a6d3e4dd[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Dec 9 10:09:11 2022 +0000
+
+    09-12
+
+[33mcommit 853b61c76ae3a9e07c279e638c1f76d7e8d1172a[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Dec 7 17:55:51 2022 +0000
+
+    07-12
+
+[33mcommit 0a6897f416e6fc7584ca905756c405ffe4452c3b[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Dec 7 08:45:17 2022 +0000
+
+    7-12
+
+[33mcommit b1994081a4f4580efedc18081a468429600a5198[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Dec 5 13:08:18 2022 +0000
+
+    end
+
+[33mcommit 3c903ec9907022146e9a32a2ddfbc287b4054c4c[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Dec 5 09:28:55 2022 +0000
+
+    12
+
+[33mcommit 6f7a396ef0f4692f9cf21208feccc3032ba05713[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Mon Dec 5 08:18:51 2022 +0000
+
+    5-12
+
+[33mcommit 8486ee3da2330ae040248450d12a6ddf5cded159[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Dec 2 12:42:07 2022 +0000
+
+    s
+
+[33mcommit 0f2c5f0844300575c66248a7400c7e25405a7c96[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Dec 2 11:50:55 2022 +0000
+
+    1
+
+[33mcommit 14d368680eaf5d8f257ae830a63f4ebf38c2970e[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Fri Dec 2 09:24:18 2022 +0000
+
+    exmp
+
+[33mcommit 139c837ba461f15197b5c7b8a35dc8b9dd2b33f4[m
+Merge: a64176b a5f9a8c
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Dec 1 09:26:37 2022 +0000
+
+    Merge branch 'main' of https://github.com/Rimcant/F_S_Udemy
+
+[33mcommit a64176b254e006987be3e7af15f7868af6032dc8[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Thu Dec 1 09:26:35 2022 +0000
+
+    Update index.html
+
+[33mcommit a5f9a8c2c415b245467a0585398cff124d371ae4[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Nov 30 15:26:48 2022 +0000
+
+    add link to readme
+
+[33mcommit 378f23b27a64d7c1b0fe459c0427b666411dcde7[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Nov 30 15:20:29 2022 +0000
+
+    add
+
+[33mcommit 145695b9245d9ab3c1f370eed836a72f57d955b7[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Wed Nov 30 10:05:12 2022 +0000
+
+    a
+
+[33mcommit 106df0780f6934b35dcd377e087cac2e0d5210bc[m
+Author: RicJM <116638687+Rimcant@users.noreply.github.com>
+Date:   Tue Nov 29 17:47:31 2022 +0000
+
+    Initial commit
