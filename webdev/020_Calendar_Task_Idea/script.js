@@ -1,374 +1,319 @@
-0.16.2 / 2018-02-07
-===================
-
-  * Fix incorrect end tag in default error & redirects
-  * deps: depd@~1.1.2
-    - perf: remove argument reassignment
-  * deps: encodeurl@~1.0.2
-    - Fix encoding `%` as last character
-  * deps: statuses@~1.4.0
-
-0.16.1 / 2017-09-29
-===================
-
-  * Fix regression in edge-case behavior for empty `path`
-
-0.16.0 / 2017-09-27
-===================
-
-  * Add `immutable` option
-  * Fix missing `</html>` in default error & redirects
-  * Use instance methods on steam to check for listeners
-  * deps: mime@1.4.1
-    - Add 70 new types for file extensions
-    - Set charset as "UTF-8" for .js and .json
-  * perf: improve path validation speed
-
-0.15.6 / 2017-09-22
-===================
-
-  * deps: debug@2.6.9
-  * perf: improve `If-Match` token parsing
-
-0.15.5 / 2017-09-20
-===================
-
-  * deps: etag@~1.8.1
-    - perf: replace regular expression with substring
-  * deps: fresh@0.5.2
-    - Fix handling of modified headers with invalid dates
-    - perf: improve ETag match loop
-    - perf: improve `If-None-Match` token parsing
-
-0.15.4 / 2017-08-05
-===================
-
-  * deps: debug@2.6.8
-  * deps: depd@~1.1.1
-    - Remove unnecessary `Buffer` loading
-  * deps: http-errors@~1.6.2
-    - deps: depd@1.1.1
-
-0.15.3 / 2017-05-16
-===================
-
-  * deps: debug@2.6.7
-    - deps: ms@2.0.0
-  * deps: ms@2.0.0
-
-0.15.2 / 2017-04-26
-===================
-
-  * deps: debug@2.6.4
-    - Fix `DEBUG_MAX_ARRAY_LENGTH`
-    - deps: ms@0.7.3
-  * deps: ms@1.0.0
-
-0.15.1 / 2017-03-04
-===================
-
-  * Fix issue when `Date.parse` does not return `NaN` on invalid date
-  * Fix strict violation in broken environments
-
-0.15.0 / 2017-02-25
-===================
-
-  * Support `If-Match` and `If-Unmodified-Since` headers
-  * Add `res` and `path` arguments to `directory` event
-  * Remove usage of `res._headers` private field
-    - Improves compatibility with Node.js 8 nightly
-  * Send complete HTML document in redirect & error responses
-  * Set default CSP header in redirect & error responses
-  * Use `res.getHeaderNames()` when available
-  * Use `res.headersSent` when available
-  * deps: debug@2.6.1
-    - Allow colors in workers
-    - Deprecated `DEBUG_FD` environment variable set to `3` or higher
-    - Fix error when running under React Native
-    - Use same color for same namespace
-    - deps: ms@0.7.2
-  * deps: etag@~1.8.0
-  * deps: fresh@0.5.0
-    - Fix false detection of `no-cache` request directive
-    - Fix incorrect result when `If-None-Match` has both `*` and ETags
-    - Fix weak `ETag` matching to match spec
-    - perf: delay reading header values until needed
-    - perf: enable strict mode
-    - perf: hoist regular expressions
-    - perf: remove duplicate conditional
-    - perf: remove unnecessary boolean coercions
-    - perf: skip checking modified time if ETag check failed
-    - perf: skip parsing `If-None-Match` when no `ETag` header
-    - perf: use `Date.parse` instead of `new Date`
-  * deps: http-errors@~1.6.1
-    - Make `message` property enumerable for `HttpError`s
-    - deps: setprototypeof@1.0.3
-
-0.14.2 / 2017-01-23
-===================
-
-  * deps: http-errors@~1.5.1
-    - deps: inherits@2.0.3
-    - deps: setprototypeof@1.0.2
-    - deps: statuses@'>= 1.3.1 < 2'
-  * deps: ms@0.7.2
-  * deps: statuses@~1.3.1
-
-0.14.1 / 2016-06-09
-===================
-
-  * Fix redirect error when `path` contains raw non-URL characters
-  * Fix redirect when `path` starts with multiple forward slashes
-
-0.14.0 / 2016-06-06
-===================
-
-  * Add `acceptRanges` option
-  * Add `cacheControl` option
-  * Attempt to combine multiple ranges into single range
-  * Correctly inherit from `Stream` class
-  * Fix `Content-Range` header in 416 responses when using `start`/`end` options
-  * Fix `Content-Range` header missing from default 416 responses
-  * Ignore non-byte `Range` headers
-  * deps: http-errors@~1.5.0
-    - Add `HttpError` export, for `err instanceof createError.HttpError`
-    - Support new code `421 Misdirected Request`
-    - Use `setprototypeof` module to replace `__proto__` setting
-    - deps: inherits@2.0.1
-    - deps: statuses@'>= 1.3.0 < 2'
-    - perf: enable strict mode
-  * deps: range-parser@~1.2.0
-    - Fix incorrectly returning -1 when there is at least one valid range
-    - perf: remove internal function
-  * deps: statuses@~1.3.0
-    - Add `421 Misdirected Request`
-    - perf: enable strict mode
-  * perf: remove argument reassignment
-
-0.13.2 / 2016-03-05
-===================
-
-  * Fix invalid `Content-Type` header when `send.mime.default_type` unset
-
-0.13.1 / 2016-01-16
-===================
-
-  * deps: depd@~1.1.0
-    - Support web browser loading
-    - perf: enable strict mode
-  * deps: destroy@~1.0.4
-    - perf: enable strict mode
-  * deps: escape-html@~1.0.3
-    - perf: enable strict mode
-    - perf: optimize string replacement
-    - perf: use faster string coercion
-  * deps: range-parser@~1.0.3
-    - perf: enable strict mode
-
-0.13.0 / 2015-06-16
-===================
-
-  * Allow Node.js HTTP server to set `Date` response header
-  * Fix incorrectly removing `Content-Location` on 304 response
-  * Improve the default redirect response headers
-  * Send appropriate headers on default error response
-  * Use `http-errors` for standard emitted errors
-  * Use `statuses` instead of `http` module for status messages
-  * deps: escape-html@1.0.2
-  * deps: etag@~1.7.0
-    - Improve stat performance by removing hashing
-  * deps: fresh@0.3.0
-    - Add weak `ETag` matching support
-  * deps: on-finished@~2.3.0
-    - Add defined behavior for HTTP `CONNECT` requests
-    - Add defined behavior for HTTP `Upgrade` requests
-    - deps: ee-first@1.1.1
-  * perf: enable strict mode
-  * perf: remove unnecessary array allocations
-
-0.12.3 / 2015-05-13
-===================
-
-  * deps: debug@~2.2.0
-    - deps: ms@0.7.1
-  * deps: depd@~1.0.1
-  * deps: etag@~1.6.0
-   - Improve support for JXcore
-   - Support "fake" stats objects in environments without `fs`
-  * deps: ms@0.7.1
-    - Prevent extraordinarily long inputs
-  * deps: on-finished@~2.2.1
-
-0.12.2 / 2015-03-13
-===================
-
-  * Throw errors early for invalid `extensions` or `index` options
-  * deps: debug@~2.1.3
-    - Fix high intensity foreground color for bold
-    - deps: ms@0.7.0
-
-0.12.1 / 2015-02-17
-===================
-
-  * Fix regression sending zero-length files
-
-0.12.0 / 2015-02-16
-===================
-
-  * Always read the stat size from the file
-  * Fix mutating passed-in `options`
-  * deps: mime@1.3.4
-
-0.11.1 / 2015-01-20
-===================
-
-  * Fix `root` path disclosure
-
-0.11.0 / 2015-01-05
-===================
-
-  * deps: debug@~2.1.1
-  * deps: etag@~1.5.1
-    - deps: crc@3.2.1
-  * deps: ms@0.7.0
-    - Add `milliseconds`
-    - Add `msecs`
-    - Add `secs`
-    - Add `mins`
-    - Add `hrs`
-    - Add `yrs`
-  * deps: on-finished@~2.2.0
-
-0.10.1 / 2014-10-22
-===================
-
-  * deps: on-finished@~2.1.1
-    - Fix handling of pipelined requests
-
-0.10.0 / 2014-10-15
-===================
-
-  * deps: debug@~2.1.0
-    - Implement `DEBUG_FD` env variable support
-  * deps: depd@~1.0.0
-  * deps: etag@~1.5.0
-    - Improve string performance
-    - Slightly improve speed for weak ETags over 1KB
-
-0.9.3 / 2014-09-24
-==================
-
-  * deps: etag@~1.4.0
-    - Support "fake" stats objects
-
-0.9.2 / 2014-09-15
-==================
-
-  * deps: depd@0.4.5
-  * deps: etag@~1.3.1
-  * deps: range-parser@~1.0.2
-
-0.9.1 / 2014-09-07
-==================
-
-  * deps: fresh@0.2.4
-
-0.9.0 / 2014-09-07
-==================
-
-  * Add `lastModified` option
-  * Use `etag` to generate `ETag` header
-  * deps: debug@~2.0.0
-
-0.8.5 / 2014-09-04
-==================
-
-  * Fix malicious path detection for empty string path
-
-0.8.4 / 2014-09-04
-==================
-
-  * Fix a path traversal issue when using `root`
-
-0.8.3 / 2014-08-16
-==================
-
-  * deps: destroy@1.0.3
-    - renamed from dethroy
-  * deps: on-finished@2.1.0
-
-0.8.2 / 2014-08-14
-==================
-
-  * Work around `fd` leak in Node.js 0.10 for `fs.ReadStream`
-  * deps: dethroy@1.0.2
-
-0.8.1 / 2014-08-05
-==================
-
-  * Fix `extensions` behavior when file already has extension
-
-0.8.0 / 2014-08-05
-==================
-
-  * Add `extensions` option
-
-0.7.4 / 2014-08-04
-==================
-
-  * Fix serving index files without root dir
-
-0.7.3 / 2014-07-29
-==================
-
-  * Fix incorrect 403 on Windows and Node.js 0.11
-
-0.7.2 / 2014-07-27
-==================
-
-  * deps: depd@0.4.4
-    - Work-around v8 generating empty stack traces
-
-0.7.1 / 2014-07-26
-==================
-
- * deps: depd@0.4.3
-   - Fix exception when global `Error.stackTraceLimit` is too low
-
-0.7.0 / 2014-07-20
-==================
-
- * Deprecate `hidden` option; use `dotfiles` option
- * Add `dotfiles` option
- * deps: debug@1.0.4
- * deps: depd@0.4.2
-   - Add `TRACE_DEPRECATION` environment variable
-   - Remove non-standard grey color from color output
-   - Support `--no-deprecation` argument
-   - Support `--trace-deprecation` argument
-
-0.6.0 / 2014-07-11
-==================
-
- * Deprecate `from` option; use `root` option
- * Deprecate `send.etag()` -- use `etag` in `options`
- * Deprecate `send.hidden()` -- use `hidden` in `options`
- * Deprecate `send.index()` -- use `index` in `options`
- * Deprecate `send.maxage()` -- use `maxAge` in `options`
- * Deprecate `send.root()` -- use `root` in `options`
- * Cap `maxAge` value to 1 year
- * deps: debug@1.0.3
-   - Add support for multiple wildcards in namespaces
-
-0.5.0 / 2014-06-28
-==================
-
- * Accept string for `maxAge` (converted by `ms`)
- * Add `headers` event
- * Include link in default redirect response
- * Use `EventEmitter.listenerCount` to count listeners
-
-0.4.3 / 2014-06-11
-==================
-
- * Do not throw un-catc
+// Setup the calendar with the current date
+$(document).ready(function(){
+  var date = new Date();
+  var today = date.getDate();
+  // Set click handlers for DOM elements
+  $(".right-button").click({date: date}, next_year);
+  $(".left-button").click({date: date}, prev_year);
+  $(".month").click({date: date}, month_click);
+  $("#add-button").click({date: date}, new_event);
+  // Set current month as active
+  $(".months-row").children().eq(date.getMonth()).addClass("active-month");
+  init_calendar(date);
+  var events = check_events(today, date.getMonth()+1, date.getFullYear());
+  show_events(events, months[date.getMonth()], today);
+});
+
+// Initialize the calendar by appending the HTML dates
+function init_calendar(date) {
+  $(".tbody").empty();
+  $(".events-container").empty();
+  var calendar_days = $(".tbody");
+  var month = date.getMonth();
+  var year = date.getFullYear();
+  var day_count = days_in_month(month, year);
+  var row = $("<tr class='table-row'></tr>");
+  var today = date.getDate();
+  // Set date to 1 to find the first day of the month
+  date.setDate(1);
+  var first_day = date.getDay();
+  // 35+firstDay is the number of date elements to be added to the dates table
+  // 35 is from (7 days in a week) * (up to 5 rows of dates in a month)
+  for(var i=0; i<35+first_day; i++) {
+      // Since some of the elements will be blank, 
+      // need to calculate actual date from index
+      var day = i-first_day+1;
+      // If it is a sunday, make a new row
+      if(i%7===0) {
+          calendar_days.append(row);
+          row = $("<tr class='table-row'></tr>");
+      }
+      // if current index isn't a day in this month, make it blank
+      if(i < first_day || day > day_count) {
+          var curr_date = $("<td class='table-date nil'>"+"</td>");
+          row.append(curr_date);
+      }   
+      else {
+          var curr_date = $("<td class='table-date'>"+day+"</td>");
+          var events = check_events(day, month+1, year);
+          if(today===day && $(".active-date").length===0) {
+              curr_date.addClass("active-date");
+              show_events(events, months[month], day);
+          }
+          // If this date has any events, style it with .event-date
+          if(events.length!==0) {
+              curr_date.addClass("event-date");
+          }
+          // Set onClick handler for clicking a date
+          curr_date.click({events: events, month: months[month], day:day}, date_click);
+          row.append(curr_date);
+      }
+  }
+  // Append the last row and set the current year
+  calendar_days.append(row);
+  $(".year").text(year);
+}
+
+// Get the number of days in a given month/year
+function days_in_month(month, year) {
+  var monthStart = new Date(year, month, 1);
+  var monthEnd = new Date(year, month + 1, 1);
+  return (monthEnd - monthStart) / (1000 * 60 * 60 * 24);    
+}
+
+// Event handler for when a date is clicked
+function date_click(event) {
+  $(".events-container").show(250);
+  $("#dialog").hide(250);
+  $(".active-date").removeClass("active-date");
+  $(this).addClass("active-date");
+  show_events(event.data.events, event.data.month, event.data.day);
+};
+
+// Event handler for when a month is clicked
+function month_click(event) {
+  $(".events-container").show(250);
+  $("#dialog").hide(250);
+  var date = event.data.date;
+  $(".active-month").removeClass("active-month");
+  $(this).addClass("active-month");
+  var new_month = $(".month").index(this);
+  date.setMonth(new_month);
+  init_calendar(date);
+}
+
+// Event handler for when the year right-button is clicked
+function next_year(event) {
+  $("#dialog").hide(250);
+  var date = event.data.date;
+  var new_year = date.getFullYear()+1;
+  $("year").html(new_year);
+  date.setFullYear(new_year);
+  init_calendar(date);
+}
+
+// Event handler for when the year left-button is clicked
+function prev_year(event) {
+  $("#dialog").hide(250);
+  var date = event.data.date;
+  var new_year = date.getFullYear()-1;
+  $("year").html(new_year);
+  date.setFullYear(new_year);
+  init_calendar(date);
+}
+
+// Event handler for clicking the new event button
+function new_event(event) {
+  // if a date isn't selected then do nothing
+  if($(".active-date").length===0)
+      return;
+  // remove red error input on click
+  $("input").click(function(){
+      $(this).removeClass("error-input");
+  })
+  // empty inputs and hide events
+  $("#dialog input[type=text]").val('');
+  $("#dialog input[type=number]").val('');
+  $(".events-container").hide(250);
+  $("#dialog").show(250);
+  // Event handler for cancel button
+  $("#cancel-button").click(function() {
+      $("#name").removeClass("error-input");
+      $("#count").removeClass("error-input");
+      $("#dialog").hide(250);
+      $(".events-container").show(250);
+  });
+  // Event handler for ok button
+  $("#ok-button").unbind().click({date: event.data.date}, function() {
+      var date = event.data.date;
+      var name = $("#name").val().trim();
+      var count = parseInt($("#count").val().trim());
+      var day = parseInt($(".active-date").html());
+      // Basic form validation
+      if(name.length === 0) {
+          $("#name").addClass("error-input");
+      }
+      else if(isNaN(count)) {
+          $("#count").addClass("error-input");
+      }
+      else {
+          $("#dialog").hide(250);
+          console.log("new event");
+          new_event_json(name, count, date, day);
+          date.setDate(day);
+          init_calendar(date);
+      }
+  });
+}
+
+// Adds a json event to event_data
+function new_event_json(name, count, date, day) {
+  var event = {
+      "occasion": name,
+      "invited_count": count,
+      "year": date.getFullYear(),
+      "month": date.getMonth()+1,
+      "day": day
+  };
+  event_data["events"].push(event);
+}
+
+// Display all events of the selected date in card views
+function show_events(events, month, day) {
+  // Clear the dates container
+  $(".events-container").empty();
+  $(".events-container").show(250);
+  console.log(event_data["events"]);
+  // If there are no events for this date, notify the user
+  if(events.length===0) {
+      var event_card = $("<div class='event-card'></div>");
+      var event_name = $("<div class='event-name'>There are no events planned for "+month+" "+day+".</div>");
+      $(event_card).css({ "border-left": "10px solid #FF1744" });
+      $(event_card).append(event_name);
+      $(".events-container").append(event_card);
+  }
+  else {
+      // Go through and add each event as a card to the events container
+      for(var i=0; i<events.length; i++) {
+          var event_card = $("<div class='event-card'></div>");
+          var event_name = $("<div class='event-name'>"+events[i]["occasion"]+":</div>");
+          var event_count = $("<div class='event-count'>"+events[i]["invited_count"]+" Invited</div>");
+          if(events[i]["cancelled"]===true) {
+              $(event_card).css({
+                  "border-left": "10px solid #FF1744"
+              });
+              event_count = $("<div class='event-cancelled'>Cancelled</div>");
+          }
+          $(event_card).append(event_name).append(event_count);
+          $(".events-container").append(event_card);
+      }
+  }
+}
+
+// Checks if a specific date has any events
+function check_events(day, month, year) {
+  var events = [];
+  for(var i=0; i<event_data["events"].length; i++) {
+      var event = event_data["events"][i];
+      if(event["day"]===day &&
+          event["month"]===month &&
+          event["year"]===year) {
+              events.push(event);
+          }
+  }
+  return events;
+}
+
+// Given data for events in JSON format
+var event_data = {
+  "events": [
+  {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10,
+      "cancelled": true
+  },
+  {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10,
+      "cancelled": true
+  },
+      {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10,
+      "cancelled": true
+  },
+  {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10
+  },
+      {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10,
+      "cancelled": true
+  },
+  {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10
+  },
+      {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10,
+      "cancelled": true
+  },
+  {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10
+  },
+      {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10,
+      "cancelled": true
+  },
+  {
+      "occasion": " Repeated Test Event ",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 10
+  },
+  {
+      "occasion": " Test Event",
+      "invited_count": 120,
+      "year": 2017,
+      "month": 5,
+      "day": 11
+  }
+  ]
+};
+
+const months = [ 
+  "January", 
+  "February", 
+  "March", 
+  "April", 
+  "May", 
+  "June", 
+  "July", 
+  "August", 
+  "September", 
+  "October", 
+  "November", 
+  "December" 
+];

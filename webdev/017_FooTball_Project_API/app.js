@@ -1,34 +1,115 @@
-# [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser)
-[![Backers on Open Collective](https://opencollective.com/fast-xml-parser/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/fast-xml-parser/sponsors/badge.svg)](#sponsors) [![Known Vulnerabilities](https://snyk.io/test/github/naturalintelligence/fast-xml-parser/badge.svg)](https://snyk.io/test/github/naturalintelligence/fast-xml-parser)
-[![NPM quality][quality-image]][quality-url]
-[![Coverage Status](https://coveralls.io/repos/github/NaturalIntelligence/fast-xml-parser/badge.svg?branch=master)](https://coveralls.io/github/NaturalIntelligence/fast-xml-parser?branch=master)
-[<img src="https://img.shields.io/badge/Try-me-blue.svg?colorA=FFA500&colorB=0000FF" alt="Try me"/>](https://naturalintelligence.github.io/fast-xml-parser/)
-[![NPM total downloads](https://img.shields.io/npm/dt/fast-xml-parser.svg)](https://npm.im/fast-xml-parser)
+const express = require("express");
+const { write } = require("fs");
+const https = require('https'); 
+const bodyParser = require("body-parser")
 
-[quality-image]: http://npm.packagequality.com/shield/fast-xml-parser.svg?style=flat-square
-[quality-url]: http://packagequality.com/#?package=fast-xml-parser
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
-Validate XML, Parse XML to JS Object, or Build XML from JS Object without C/C++ based libraries and no callback.
-
-> Looking for maintainers
-
-<a href="https://opencollective.com/fast-xml-parser/donate" target="_blank">
-  <img src="https://opencollective.com/fast-xml-parser/donate/button@2x.png?color=blue" width=200 />
-</a>
-<a href="https://paypal.me/naturalintelligence"> <img src="static/img/support_paypal.svg" alt="Stubmatic donate button" width="200"/></a>
-
-Check [ThankYouBackers](https://github.com/NaturalIntelligence/ThankYouBackers) for our contributors
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html")
+});
+   
 
 
+app.post("/", function (req, res) {
 
-[![](static/img/ni_ads_ads.gif)](https://github.com/NaturalIntelligence/ads/)
-## Users
+  var i = req.body.index
+  
 
-<a href="https://github.com/renovatebot/renovate" title="renovate" ><img src="https://avatars1.githubusercontent.com/u/38656520" width="60px" ></a>
-<a href="https://vmware.com/" title="vmware" > <img src="https://avatars0.githubusercontent.com/u/473334" width="60px" ></a>
-<a href="https://opensource.microsoft.com/" title="microsoft" > <img src="https://avatars0.githubusercontent.com/u/6154722" width="60px" ></a>
-<a href="http://ibm.github.io/" title="IBM" > <img src="https://avatars2.githubusercontent.com/u/1459110" width="60px" ></a>
-<a href="http://www.smartbear.com" title="SmartBear Software" > <img src="https://avatars2.githubusercontent.com/u/1644671" width="60px" ></a>
-<a href="http://nasa.github.io/" title="NASA" > <img src="https://avatars0.githubusercontent.com/u/848102" width="60px" ></a>
-<a href="https://github.com/prettier" title="Prettier" > <img src="https://av
+  var options = {
+    'method': 'GET',
+    'hostname': 'v3.football.api-sports.io',
+    'path': 'https://v3.football.api-sports.io/players/topassists?league=94&season=2021',
+    'headers': {
+      'x-rapidapi-key': 'ead8bc8dba612b9ea9950fb1ece5d716',
+      'x-rapidapi-host': 'v3.football.api-sports.io'
+    },
+    'maxRedirects': 20
+  };
+  
+  var requ = https.request(options, function (resp) {
+    var chunks = [];
+  
+    resp.on("data", function (chunk) {
+        chunks.push(chunk);
+    });
+  
+    resp.on("end", function (chunk) {
+      var body = Buffer.concat(chunks);         
+      console.log(body.toString());
+      var wdata = JSON.parse(body.toString())
+      //res.write("Nome: " + response[0].player.name + "Idade: " + response[0].player.age + "Altura: " response[0].player.height + "Peso: " + response[0].player.weight + "foto: " +response[0].player.photo + "clube: " + response[0].statistics[0].team.name + "Logo: " +response[0].statistics[0].team.logo + "rating: " +response[0].statistics[0].games.rating+ "Golos: " +response[0].statistics[0].goals.total+ "assists: "+ response[0].statistics[0].goals.assists )
+
+
+
+      
+
+      res.send(
+        "Nome: " + wdata.response[i].player.name +
+        " Idade: " + wdata.response[i].player.age +
+        " Altura: " + wdata.response[i].player.height +
+        " Peso: " + wdata.response[i].player.weight +
+
+
+        "foto:<img src=" + wdata.response[i].player.photo + " width=100 height=100> <img src=" + wdata.response[i].statistics[0].team.logo + " width=100 height=100> Rating: " + Number(wdata.response[i].statistics[0].games.rating).toFixed(1) +
+        " <strong>Golos:</strong> " + wdata.response[i].statistics[0].goals.total +
+        " <strong>assists</strong>: " + wdata.response[i].statistics[0].goals.assists)
+
+      
+      //res.send(wdata.response[0].player.name)
+      //res.send(JSON.parse(body.toString()))
+    });
+  
+    resp.on("error", function (error) {
+      console.error(error);
+    });
+    
+
+
+
+
+
+})
+    
+
+  
+     
+      
+      
+      requ.end();
+
+    
+
+
+    
+
+    
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.listen(3000, function () {
+    console.log("server is runing on port 3000")
+    
+})

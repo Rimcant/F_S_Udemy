@@ -1,41 +1,89 @@
-{
-  "name": "@aws-sdk/signature-v4",
-  "version": "3.257.0",
-  "description": "A standalone implementation of the AWS Signature V4 request signing algorithm",
-  "main": "./dist-cjs/index.js",
-  "module": "./dist-es/index.js",
-  "types": "./dist-types/index.d.ts",
-  "scripts": {
-    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:es": "tsc -p tsconfig.es.json",
-    "build:include:deps": "lerna run --scope $npm_package_name --include-dependencies build",
-    "build:types": "tsc -p tsconfig.types.json",
-    "build:types:downlevel": "downlevel-dts dist-types dist-types/ts3.4",
-    "clean": "rimraf ./dist-* && rimraf *.tsbuildinfo",
-    "test": "jest --coverage"
-  },
-  "author": {
-    "name": "AWS SDK for JavaScript Team",
-    "url": "https://aws.amazon.com/javascript/"
-  },
-  "license": "Apache-2.0",
-  "dependencies": {
-    "@aws-sdk/is-array-buffer": "3.201.0",
-    "@aws-sdk/types": "3.257.0",
-    "@aws-sdk/util-hex-encoding": "3.201.0",
-    "@aws-sdk/util-middleware": "3.257.0",
-    "@aws-sdk/util-uri-escape": "3.201.0",
-    "@aws-sdk/util-utf8": "3.254.0",
-    "tslib": "^2.3.1"
-  },
-  "devDependencies": {
-    "@aws-crypto/sha256-js": "3.0.0",
-    "@aws-sdk/protocol-http": "3.257.0",
-    "@aws-sdk/util-buffer-from": "3.208.0",
-    "@tsconfig/recommended": "1.0.1",
-    "concurrently": "7.0.0",
-    "downlevel-dts": "0.10.1",
-    "rimraf": "3.0.2",
-    "typedoc": "0.19.2",
-    "typescript": "~4.
+@charset "UTF-8";
+
+
+:root{
+    --cor0: #011F3F;
+    --cor1: #FEF2BF;
+
+   
+
+    --fonte-0: 'Press Start 2P', cursive;
+
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    text-align: center;
+    background-color: var(--cor0);
+    font-family: var(--fonte-0);
+}
+
+h1{
+    color: var(--cor1);
+    font-size: 3rem;
+    margin: 5%;
+}
+
+.btn{
+    height: 200px;
+    width: 200px;
+    border-radius: 40px;
+    border: 10px solid rgba(0, 0, 0, 0.852);
+    display: inline-block;
+    margin: 2%;
+}
+.green  {
+    background-color: green;
+}
+.green:active  {
+    background-color: rgb(5, 248, 5);
+}
+.green_active  {
+    background-color: rgb(5, 248, 5);
+}
+.red {
+    background-color: rgba(206, 2, 2, 0.975);
+}
+.red:active {
+    background-color: red;
+}
+.red_active {
+    background-color: red;
+}
+.yellow{
+    background-color: rgba(255, 221, 0, 0.822);
+}
+.yellow:active{
+    background-color: rgb(255, 225, 0);
+}
+.yellow_active{
+    background-color: rgb(255, 225, 0);
+}
+.blue {
+    background-color: rgba(0, 0, 180, 0.813);
+}
+.blue:active {
+    background-color: blue;
+}
+.blue_active {
+    background-color: blue;
+}
+
+.btnglow:active {
+    color: #fff;
+    border-color: #dfdfdf;
+    box-shadow: 2px 2px 40px 2px white;
+    border: 10px solid rgba(0, 0, 0, 0.204);  
+
+}
+.btnglow_active {
+    color: #fff;
+    border-color: #dfdfdf;
+    box-shadow: 2px 2px 40px 2px white;
+    border: 10px solid rgba(0, 0, 0, 0.204);
+}
+

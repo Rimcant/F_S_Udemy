@@ -1,0 +1,39 @@
+/***************TAG SELECTORS**************/
+
+h1{
+    color: red;
+    font-size: 100px;
+}
+
+img:hover{
+    background-color: gold;
+}
+
+/* 
+img{
+    background-color: red;
+}
+*/
+
+
+/***************CLASS SELECTORS****************/
+
+.bacon{background-color: red;
+}
+.brocoli{
+    background-color: green;
+}
+
+.circular{
+    border-radius: 100%;
+}
+
+
+/***************ID SELECTORS****************/
+/*elementos unicos como barra de navegaçao ou headings ao passo que class é coisas q se podem repetir a reter
+ID = UNICO SIMILAR TO Num. do CC só posso usar uma vez
+CLASS= várias SIMILAR Nome*/
+
+#heading{
+    color: blue;
+}

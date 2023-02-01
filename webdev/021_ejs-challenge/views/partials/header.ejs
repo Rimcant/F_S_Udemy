@@ -1,16 +1,25 @@
- can be converted to their byte representation with `toByteArray()`.
-(Actually, JavaScript mostly does not know about byte buffers. They are emulated with
-arrays of numbers, each in range of 0..255.)
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-```js
-var bytes = ipaddr.parse('2a00:1450:8007::68').toByteArray(); // ipv6.google.com
-bytes // => [42, 0x00, 0x14, 0x50, 0x80, 0x07, 0x00, <zeroes...>, 0x00, 0x68 ]
-```
+<head>
+  <meta charset="utf-8">
+  <title>Daily Journal</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">DAILY JOURNAL</p>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- 6 -->
+          <li id="home"><a href="/">HOME</a></li>
+          <li id="about"><a href="/about">ABOUT US</a></li>
+          <li id="contact"><a href="/contact">CONTACT US</a></li>
+        </ul>
+    </div>
+  </nav>
 
-The `ipaddr.IPv4` and `ipaddr.IPv6` objects have some methods defined, too. All of them
-have the same interface for both protocols, and are similar to global methods.
-
-`ipaddr.IPvX.isValid(string)` can be used to check if the string is a valid address
-for particular protocol, and `ipaddr.IPvX.parse(string)` is the error-throwing parser.
-
-`ipaddr.IPvX.isValid(string)` uses the same format for parsing as the POSIX `i
+  <body>
+    <div class="container">

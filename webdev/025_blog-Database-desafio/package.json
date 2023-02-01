@@ -1,23 +1,17 @@
-var LazyWrapper = require('./_LazyWrapper');
-
-/**
- * Reverses the direction of lazy iteration.
- *
- * @private
- * @name reverse
- * @memberOf LazyWrapper
- * @returns {Object} Returns the new reversed `LazyWrapper` object.
- */
-function lazyReverse() {
-  if (this.__filtered__) {
-    var result = new LazyWrapper(this);
-    result.__dir__ = -1;
-    result.__filtered__ = true;
-  } else {
-    result = this.clone();
-    result.__dir__ *= -1;
+{
+  "name": "ejs-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11"
   }
-  return result;
 }
-
-module.exports = lazyReverse;

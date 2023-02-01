@@ -1,1 +1,104 @@
-{"version":3,"file":"unordered.js","sourceRoot":"","sources":["../../src/bulk/unordered.ts"],"names":[],"mappings":"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
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+    .home {
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.home h1 {
+font-size: 4rem;
+color: var(--cultured);
+text-align: center;
+margin-bottom: 2rem;
+}
+
+.home input[type='number'] {
+width: 50%;
+padding: 1rem;
+border-radius: 5px;
+border: none;
+font-size: 1.8rem;
+margin-bottom: 2rem;
+text-align: center;
+}
+
+.home input[type='text'] {
+width: 50%;
+padding: 1rem;
+border-radius: 5px;
+border: none;
+font-size: 1.8rem;
+margin-bottom: 2rem;
+text-align: center;
+}
+
+.home button {
+width: 50%;
+padding: 1rem;
+border-radius: 5px;
+border: none;
+font-size: 2rem;
+background-color: var(--cultured);
+color: var(--midnight-blue);
+text-align: center;
+margin-top: 2rem;
+}
+
+.home button:hover {
+background-color: var(--oxford-blue);
+color: var(--cultured);
+cursor: pointer;
+}
+
+/* try to add some spacing above the number of players input */
+.home input[type='number'] {
+margin-top: 2rem;
+}
+
+/* Harmonize the colors */
+.home {
+background-color: var(--cor1);
+}
+.home h1, .home input[type='number'], .home input[type='text'], .home button {
+color: var(--cor2);
+}
+.home button:hover {
+background-color: var(--cor3);
+}
+
+</style>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="#">Logo</a>
+        </div>
+        <div class="main_list">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="home">
+        <h1>Programa de Sorteio</h1>
+        <input type="number" placeholder="Number of players per team">
+        <input type="text" placeholder="Team name">
+        <button>Generate Teams</button>
+    </div>
+</body>
+</html>
