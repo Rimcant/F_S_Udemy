@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game name="severed_steel">
+  <language name="ar_AE" translation="">
+    <setting name="Ambient Occlusion" translation="إطباق محيطي">
+      <value name="Off" translation="إيقاف تشغيل" />
+      <value name="On" translation="تشغيل" />
+    </setting>
+    <setting name="Bloom" translation="توهج">
+      <value name="Off" translation="إيقاف تشغيل" />
+      <value name="On" translation="تشغيل" />
+    </setting>
+    <setting name="Cel Shader" translation="ظل الزنزانة">
+      <value name="Off" translation="إيقاف تشغيل" />
+      <value name="On" translation="تشغيل" />
+    </setting>
+    <setting name="Display Mode" translation="وضع العرض">
+      <value name="Full-screen" translation="شاشة كاملة" />
+      <value name="Windowed" translation="مزود بإطارات" />
+      <value name="Windowed Borderless" translation="نافذة بلا حدود" />
+    </setting>
+    <setting name="Empty Shells" translation="قذائف فارغة">
+      <value name="Off" translation="إيقاف تشغيل" />
+      <value name="O
