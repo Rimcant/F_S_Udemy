@@ -76,21 +76,25 @@ app.post("/compose", function(req, res){
 });
 
 app.get("/posts/:postId", function(req, res){
-  const requestedTitle = _.lowerCase(req.params.postId);
-  console.log(requestedTitle)
+  const requestedId = req.params.postId;
+  console.log(requestedId)
 
 
-  posts.forEach(function(post){
-    const storedTitle = _.lowerCase(post.title);
 
-    if (storedTitle === requestedTitle) {
+  Post.findOne({ _id: requestedId }, function (err, post) {
+    if (err) {
+      console.log(err)
+      res.status(500).send("An error occurred while searching for the post.")
+    } else if (!post) {
+      res.status(404).send("No post was found with the given id.")
+    } else {
+      console.log(post)
       res.render("post", {
         title: post.title,
         content: post.content
       });
     }
   });
-
 });
 
 app.listen(3000, function() {
