@@ -1,6 +1,8 @@
-// Contato.js
+// cartaocontacto.js
 
 import React from 'react';
+import Avatar from './Avatar'
+import Detail from './detail'
 
 
 function Contato(props) {
@@ -9,12 +11,9 @@ function Contato(props) {
     <div className="card">
       <div className="top">
         <h2 className='name'>{props.name}</h2>
-        <img className='circle-img' src={props.imgURL} alt={props.name} />
-      </div>
-      <div className="bottom">
-        <p className='info'>{props.phone}</p>
-        <p className='info'>{props.email}</p>
-      </div>
+        <Avatar name={props.name} imgURL={props.imgURL} />
+        </div>
+        <Detail phone={props.phone} email={props.email}  />
     </div>
   </div>
   );
