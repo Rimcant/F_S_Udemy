@@ -7,15 +7,10 @@ var userIsRegistered = false;
 
 function App() {
   return (   
-
-    !userIsRegistered ?
       <div className="container">
-      <Ecralogin userIsRegistered={true} />
+      <Ecralogin userIsRegistered={userIsRegistered} />
     </div>
-      :
-      <div className="container">
-      <Ecralogin userIsRegistered={false} />
-    </div>   
+     
   );
 }
 
