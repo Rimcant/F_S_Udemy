@@ -2,7 +2,7 @@ import React from "react";
 
 function ecraboasvindas() {
     return (
-        <div className="container">
+        <div>
         <h1> Bem Vindo Caríssimo User </h1>
       </div>
     )

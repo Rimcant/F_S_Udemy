@@ -28,7 +28,7 @@ function Submit() {
 
 
   return (
-    <div className="container">
+    <div>
       <h1> Hello {headingText} </h1>
           <input
               type="text"
