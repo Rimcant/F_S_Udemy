@@ -367,11 +367,15 @@ input.className = "added-box";
     input.placeholder = "Name " + (inputCount + 1); //set the input placeholder with the inputCount variable
     inputContainer.appendChild(input); //append the input to the container
     inputCount++; //increment the inputCount variable
+    input.addEventListener("input", function(event) {
+    nomes[inputCount - 1] = event.target.value;
+  });
+
   }
 
   function generateTeams() {
     // Declarar uma lista vazia para armazenar os nomes
-    var names = [];
+    var nomes = []; // array para armazenar os nomes
     // Loop através de todos os inputs com nome começando com "name"
     for (let i = 0; i < inputCount; i++) {
         // Selecionar o input atual através de seu nome
